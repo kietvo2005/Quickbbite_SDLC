@@ -1,0 +1,1 @@
+SELECT * FROM sepay_webhook_logs ORDER BY id DESC LIMIT 5;
