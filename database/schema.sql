@@ -1,7 +1,5 @@
 -- Database Schema for Food Delivery System
 -- Created for Distinction-level university assignment
-SELECT id, payment_method, order_code, created_at FROM orders ORDER BY id DESC LIMIT 5;
-
 CREATE DATABASE IF NOT EXISTS `food_delivery` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `food_delivery`;
 
