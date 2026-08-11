@@ -4,11 +4,16 @@
  * Adds, edits, lists, and removes restaurant partner accounts.
  */
 
-$pageTitle = "Manage Restaurants";
-require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/config/config.php';
+require_once __DIR__ . '/../../includes/database/Database.php';
+require_once __DIR__ . '/../../includes/functions/helpers.php';
+require_once __DIR__ . '/../../includes/functions/auth.php';
 
 // Guards
 require_admin();
+
+$pageTitle = "Manage Restaurants";
+require_once __DIR__ . '/../../includes/header.php';
 
 $db = Database::getInstance();
 

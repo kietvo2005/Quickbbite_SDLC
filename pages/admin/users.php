@@ -4,11 +4,16 @@
  * Lists accounts, adjusts role levels, toggles active status, and manages suspensions.
  */
 
-$pageTitle = "Manage Users";
-require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/config/config.php';
+require_once __DIR__ . '/../../includes/database/Database.php';
+require_once __DIR__ . '/../../includes/functions/helpers.php';
+require_once __DIR__ . '/../../includes/functions/auth.php';
 
 // Guards
 require_admin();
+
+$pageTitle = "Manage Users";
+require_once __DIR__ . '/../../includes/header.php';
 
 $db = Database::getInstance();
 $adminId = $_SESSION['user_id'];

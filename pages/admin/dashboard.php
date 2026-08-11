@@ -4,26 +4,31 @@
  * Incorporates KPI statistics cards, Chart.js integrations, Newest Customers, and Bestselling Food.
  */
 
-$pageTitle = "Admin Dashboard";
-require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/config/config.php';
+require_once __DIR__ . '/../../includes/database/Database.php';
+require_once __DIR__ . '/../../includes/functions/helpers.php';
+require_once __DIR__ . '/../../includes/functions/auth.php';
 
 // Safe check: Deny access if not admin
 require_admin();
 
+$pageTitle = "Admin Dashboard";
+require_once __DIR__ . '/../../includes/header.php';
+
 $db = Database::getInstance();
 
 // 1. Calculate KPI Metric Card Summaries
-$totalUsersCount = (int)$db->queryRow("SELECT COUNT(*) FROM `users`")['COUNT(*)'];
-$totalCustomersCount = (int)$db->queryRow("SELECT COUNT(*) FROM `users` WHERE `role` = 'customer'")['COUNT(*)'];
-$totalRestaurantsCount = (int)$db->queryRow("SELECT COUNT(*) FROM `restaurants`")['COUNT(*)'];
-$totalFoodsCount = (int)$db->queryRow("SELECT COUNT(*) FROM `foods`")['COUNT(*)'];
-$totalOrdersCount = (int)$db->queryRow("SELECT COUNT(*) FROM `orders`")['COUNT(*)'];
-$pendingOrdersCount = (int)$db->queryRow("SELECT COUNT(*) FROM `orders` WHERE `status` = 'pending'")['COUNT(*)'];
-$completedOrdersCount = (int)$db->queryRow("SELECT COUNT(*) FROM `orders` WHERE `status` = 'delivered'")['COUNT(*)'];
-$cancelledOrdersCount = (int)$db->queryRow("SELECT COUNT(*) FROM `orders` WHERE `status` = 'cancelled'")['COUNT(*)'];
-$todayRevenue = (float)$db->queryRow("SELECT COALESCE(SUM(`total_amount`), 0) FROM `orders` WHERE `payment_status` = 'paid' AND DATE(`created_at`) = CURRENT_DATE()")['COALESCE(SUM(`total_amount`), 0)'] ?? 0.0;
-$monthlyRevenue = (float)$db->queryRow("SELECT COALESCE(SUM(`total_amount`), 0) FROM `orders` WHERE `payment_status` = 'paid' AND MONTH(`created_at`) = MONTH(CURRENT_DATE()) AND YEAR(`created_at`) = YEAR(CURRENT_DATE())")['COALESCE(SUM(`total_amount`), 0)'] ?? 0.0;
-$yearlyRevenue = (float)$db->queryRow("SELECT COALESCE(SUM(`total_amount`), 0) FROM `orders` WHERE `payment_status` = 'paid' AND YEAR(`created_at`) = YEAR(CURRENT_DATE())")['COALESCE(SUM(`total_amount`), 0)'] ?? 0.0;
+$totalUsersCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `users`")['cnt'];
+$totalCustomersCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `users` WHERE `role` = 'customer'")['cnt'];
+$totalRestaurantsCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `restaurants`")['cnt'];
+$totalFoodsCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `foods`")['cnt'];
+$totalOrdersCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `orders`")['cnt'];
+$pendingOrdersCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `orders` WHERE `status` = 'pending'")['cnt'];
+$completedOrdersCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `orders` WHERE `status` = 'delivered'")['cnt'];
+$cancelledOrdersCount = (int)$db->queryRow("SELECT COUNT(*) AS cnt FROM `orders` WHERE `status` = 'cancelled'")['cnt'];
+$todayRevenue = (float)$db->queryRow("SELECT COALESCE(SUM(`total_amount`), 0) AS revenue FROM `orders` WHERE `payment_status` = 'paid' AND `status` != 'cancelled' AND DATE(`created_at`) = CURRENT_DATE()")['revenue'];
+$monthlyRevenue = (float)$db->queryRow("SELECT COALESCE(SUM(`total_amount`), 0) AS revenue FROM `orders` WHERE `payment_status` = 'paid' AND `status` != 'cancelled' AND MONTH(`created_at`) = MONTH(CURRENT_DATE()) AND YEAR(`created_at`) = YEAR(CURRENT_DATE())")['revenue'];
+$yearlyRevenue = (float)$db->queryRow("SELECT COALESCE(SUM(`total_amount`), 0) AS revenue FROM `orders` WHERE `payment_status` = 'paid' AND `status` != 'cancelled' AND YEAR(`created_at`) = YEAR(CURRENT_DATE())")['revenue'];
 
 // 2. Fetch Monthly Revenue Aggregates for Chart.js Line Graph
 $monthlyRevenueData = $db->queryAll("SELECT DATE_FORMAT(`created_at`, '%b %Y') AS `month_label`, SUM(`total_amount`) AS `revenue` 

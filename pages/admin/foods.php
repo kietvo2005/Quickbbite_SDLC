@@ -5,11 +5,16 @@
  * No page reloads - all operations handled via AJAX with toast notifications.
  */
 
-$pageTitle = "Manage Foods";
-require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/config/config.php';
+require_once __DIR__ . '/../../includes/database/Database.php';
+require_once __DIR__ . '/../../includes/functions/helpers.php';
+require_once __DIR__ . '/../../includes/functions/auth.php';
 
 // Guards
 require_admin();
+
+$pageTitle = "Manage Foods";
+require_once __DIR__ . '/../../includes/header.php';
 
 $db = Database::getInstance();
 
