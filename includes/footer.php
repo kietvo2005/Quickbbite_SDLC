@@ -88,5 +88,7 @@
     <script src="<?php echo BASE_URL; ?>assets/js/validation.js"></script>
     <!-- Custom interactions helper scripts -->
     <script src="<?php echo BASE_URL; ?>assets/js/main.js"></script>
+    <!-- Admin CRUD utilities (toast notifications, confirmations, AJAX handlers) -->
+    <script src="<?php echo BASE_URL; ?>assets/js/admin-crud.js"></script>
 </body>
 </html>

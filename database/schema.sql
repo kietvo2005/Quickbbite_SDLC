@@ -6,6 +6,7 @@ USE `food_delivery`;
 -- Disable Foreign Key checks for clean drop
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP TABLE IF EXISTS `wishlist`;
 DROP TABLE IF EXISTS `sepay_webhook_logs`;
 DROP TABLE IF EXISTS `auth_tokens`;
 DROP TABLE IF EXISTS `reviews`;
@@ -127,6 +128,17 @@ CREATE TABLE `cart` (
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   FOREIGN KEY (`food_id`) REFERENCES `foods` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 7a. WISHLIST TABLE
+CREATE TABLE `wishlist` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT NOT NULL,
+  `food_id` INT NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`food_id`) REFERENCES `foods` (`id`) ON DELETE CASCADE,
+  UNIQUE KEY `uk_user_food` (`user_id`, `food_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 8. ORDERS TABLE

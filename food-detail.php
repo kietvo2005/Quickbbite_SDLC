@@ -104,6 +104,10 @@ require_once __DIR__ . '/includes/header.php';
             
             <h5 class="fw-bold mb-2">Description</h5>
             <p class="text-muted mb-4"><?php echo e($food['description']); ?></p>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="badge bg-light text-dark rounded-pill px-3 py-2"><i class="bi bi-star-fill text-warning me-1"></i><?php echo get_food_rating($food); ?>/5.0</span>
+                <span class="badge bg-light text-dark rounded-pill px-3 py-2"><i class="bi bi-clock-history text-danger me-1"></i>Ready in <?php echo get_food_delivery_time($food); ?></span>
+            </div>
             
             <!-- Order config Form -->
             <form action="food-detail.php?id=<?php echo $foodId; ?>" method="POST" class="card border-0 shadow-sm rounded-4 p-4 bg-white">
@@ -133,19 +137,19 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="col-4">
                     <div class="p-2 border rounded-3 bg-light">
                         <i class="bi bi-clock-history text-danger fs-4 d-block mb-1"></i>
-                        <span class="small text-muted d-block" style="font-size: 0.75rem;">Fast Prep</span>
+                        <span class="small text-muted d-block" style="font-size: 0.75rem;">Ready in <?php echo get_food_delivery_time($food); ?></span>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="p-2 border rounded-3 bg-light">
                         <i class="bi bi-box-seam text-success fs-4 d-block mb-1"></i>
-                        <span class="small text-muted d-block" style="font-size: 0.75rem;">Eco Boxed</span>
+                        <span class="small text-muted d-block" style="font-size: 0.75rem;">Freshly prepared</span>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="p-2 border rounded-3 bg-light">
                         <i class="bi bi-award-fill text-warning fs-4 d-block mb-1"></i>
-                        <span class="small text-muted d-block" style="font-size: 0.75rem;">High Rated</span>
+                        <span class="small text-muted d-block" style="font-size: 0.75rem;">Rated <?php echo get_food_rating($food); ?>/5</span>
                     </div>
                 </div>
             </div>

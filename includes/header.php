@@ -272,8 +272,67 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
         html.dark-mode ::-webkit-scrollbar-thumb:hover {
             background: #383c45;
         }
-    </style>
-</head>
+
+        /* Admin Dashboard CRUD Toast Notifications */
+        .admin-toast {
+            min-width: 240px;
+            max-width: 320px;
+            padding: 0.75rem 0.9rem;
+            border-radius: 0.75rem;
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            pointer-events: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .admin-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .admin-toast.success {
+            background: linear-gradient(135deg, #198754, #20c997);
+        }
+
+        .admin-toast.error {
+            background: linear-gradient(135deg, #dc3545, #e35d6a);
+        }
+
+        .admin-toast.info {
+            background: linear-gradient(135deg, #0dcaf0, #2dd4bf);
+        }
+
+        /* Confirmation Modal Styling */
+        .modal-content {
+            background: var(--bs-body-bg);
+            color: var(--bs-body-color);
+        }
+
+        html.dark-mode .modal-content {
+            background-color: #14161b !important;
+            border-color: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        html.dark-mode .modal-header {
+            border-bottom-color: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        html.dark-mode .modal-footer {
+            border-top-color: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        html.dark-mode .modal-title {
+            color: #f2f3f5 !important;
+        }
+
+        html.dark-mode .modal-body {
+            color: #d5d8dd !important;
+        }
     </style>
 </head>
 <body>

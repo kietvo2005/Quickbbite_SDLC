@@ -145,6 +145,11 @@ require_once __DIR__ . '/../../includes/header.php';
                         <span><?php echo __('cart_delivery_fee'); ?></span>
                         <span class="text-success"><?php echo __('cart_free'); ?></span>
                     </div>
+                    <?php if (!empty($cartItems)) : $firstItem = $cartItems[0]; ?>
+                    <div class="alert alert-light border small text-muted mb-3">
+                        <i class="bi bi-clock-history me-1"></i>Estimated arrival for <?php echo e($firstItem['name']); ?>: <?php echo get_food_delivery_time($firstItem); ?>
+                    </div>
+                    <?php endif; ?>
                     <div class="d-flex justify-content-between mb-2 small text-muted">
                         <span><?php echo __('cart_discount'); ?></span>
                         <span><?php echo format_currency($discount); ?></span>

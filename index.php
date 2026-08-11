@@ -49,16 +49,18 @@ if ($isFiltered) {
 $categories = $db->queryAll("SELECT * FROM `categories` ORDER BY `id` ASC");
 
 // Fetch popular foods
-$popularFoods = $db->queryAll("SELECT f.*, r.`name` AS `restaurant_name` 
+$popularFoods = $db->queryAll("SELECT f.*, r.`name` AS `restaurant_name`, c.`name` AS `category_name` 
                                FROM `foods` f 
-                               JOIN `restaurants` r ON f.`restaurant_id` = r.`id` 
+                               JOIN `restaurants` r ON f.`restaurant_id` = r.`id`
+                               JOIN `categories` c ON f.`category_id` = c.`id`
                                WHERE f.`is_popular` = 1 AND f.`is_available` = 1 
                                LIMIT 4");
 
 // Fetch latest foods
-$latestFoods = $db->queryAll("SELECT f.*, r.`name` AS `restaurant_name` 
+$latestFoods = $db->queryAll("SELECT f.*, r.`name` AS `restaurant_name`, c.`name` AS `category_name` 
                               FROM `foods` f 
-                              JOIN `restaurants` r ON f.`restaurant_id` = r.`id` 
+                              JOIN `restaurants` r ON f.`restaurant_id` = r.`id`
+                              JOIN `categories` c ON f.`category_id` = c.`id`
                               WHERE f.`is_latest` = 1 AND f.`is_available` = 1 
                               ORDER BY f.`id` DESC 
                               LIMIT 4");
@@ -186,8 +188,8 @@ $restaurants = $db->queryAll("SELECT * FROM `restaurants` WHERE `status` = 'acti
                                 <p class="text-muted small mb-1"><i class="bi bi-shop me-1 text-danger"></i><?php echo e($food['restaurant_name']); ?></p>
                                 <h5 class="fw-bold mb-2 text-truncate"><?php echo e($food['name']); ?></h5>
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <span class="rating-chip"><i class="bi bi-star-fill"></i> 4.8</span>
-                                    <span class="delivery-chip"><i class="bi bi-clock-history"></i> 25 min</span>
+                                    <span class="rating-chip"><i class="bi bi-star-fill"></i> <?php echo get_food_rating($food); ?></span>
+                                    <span class="delivery-chip"><i class="bi bi-clock-history"></i> <?php echo get_food_delivery_time($food); ?></span>
                                 </div>
                                 <p class="text-muted small text-truncate"><?php echo e($food['description']); ?></p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
@@ -222,8 +224,8 @@ $restaurants = $db->queryAll("SELECT * FROM `restaurants` WHERE `status` = 'acti
                                 <p class="text-muted small mb-1"><i class="bi bi-shop me-1 text-danger"></i><?php echo e($food['restaurant_name']); ?></p>
                                 <h5 class="fw-bold mb-2 text-truncate"><?php echo e($food['name']); ?></h5>
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <span class="rating-chip"><i class="bi bi-star-fill"></i> 4.7</span>
-                                    <span class="delivery-chip"><i class="bi bi-clock-history"></i> 18 min</span>
+                                    <span class="rating-chip"><i class="bi bi-star-fill"></i> <?php echo get_food_rating($food); ?></span>
+                                    <span class="delivery-chip"><i class="bi bi-clock-history"></i> <?php echo get_food_delivery_time($food); ?></span>
                                 </div>
                                 <p class="text-muted small text-truncate"><?php echo e($food['description']); ?></p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">

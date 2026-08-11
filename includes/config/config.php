@@ -70,7 +70,16 @@ function asset_url($path = '') {
 
 function image_url($path = '', $fallback = 'assets/images/default_food.jpg') {
     $resolvedPath = !empty($path) ? $path : $fallback;
-    return asset_url($resolvedPath);
+
+    if (!empty($resolvedPath) && strpos($resolvedPath, 'http://') !== 0 && strpos($resolvedPath, 'https://') !== 0) {
+        $projectRoot = dirname(__DIR__, 2);
+        $localPath = $projectRoot . '/' . ltrim($resolvedPath, '/');
+        if (file_exists($localPath)) {
+            return asset_url($resolvedPath);
+        }
+    }
+
+    return asset_url($fallback);
 }
 /**
  * Load and cache the active language dictionary.

@@ -101,10 +101,10 @@ $cuisines = $db->queryAll("SELECT DISTINCT `cuisine_type` FROM `restaurants` WHE
                                 <span class="badge bg-danger-subtle text-danger"><?php echo __('restaurant_free_delivery'); ?></span>
                             </div>
                             <div class="d-flex justify-content-between small text-muted mb-3">
-                                <span><i class="bi bi-star-fill text-warning me-1"></i>4.9</span>
-                                <span><i class="bi bi-clock-history me-1"></i>25-35 min</span>
+                                <span><i class="bi bi-star-fill text-warning me-1"></i><?php echo get_restaurant_rating($restaurant); ?></span>
+                                <span><i class="bi bi-clock-history me-1"></i><?php echo get_restaurant_delivery($restaurant); ?></span>
                             </div>
-                            <p></p> class="card-text text-muted small mb-4 flex-grow-1 text-truncate-2" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                            <p class="card-text text-muted small mb-4 flex-grow-1 text-truncate-2" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
                                 <?php echo e($restaurant['description']); ?>
                             </p>
                             <a href="restaurant-menu.php?id=<?php echo $restaurant['id']; ?>" class="btn btn-brand btn-sm w-100 py-2"><?php echo __('restaurant_explore_menu'); ?></a>

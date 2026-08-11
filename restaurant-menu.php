@@ -120,9 +120,13 @@ $ratingCount = $avgRatingRow['count'] ?? 0;
                                             <?php echo e($food['description']); ?>
                                         </p>
                                     </div>
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
                                         <span class="food-price fs-5"><?php echo format_currency($food['price']); ?></span>
                                         <a href="food-detail.php?id=<?php echo $food['id']; ?>" class="btn btn-brand btn-sm">Add to Order</a>
+                                    </div>
+                                    <div class="d-flex justify-content-between small text-muted">
+                                        <span><i class="bi bi-star-fill text-warning me-1"></i><?php echo get_food_rating($food); ?></span>
+                                        <span><i class="bi bi-clock-history me-1"></i><?php echo get_food_delivery_time($food); ?></span>
                                     </div>
                                 </div>
                             </div>
