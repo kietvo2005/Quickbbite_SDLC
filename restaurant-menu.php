@@ -1,6 +1,6 @@
 <?php
 /**
- * Restaurant Menu & Review Page - Food Delivery System
+ * Restaurant Menu & Review Page - QuickBite
  * Lists restaurant profiles, menu dishes, and ratings with submission handles.
  */
 

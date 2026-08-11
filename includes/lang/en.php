@@ -60,7 +60,7 @@ return [
     'about_hero_title' => 'About Our System',
     'about_hero_subtitle' => 'A production-quality educational showcase for Online Food Ordering & Delivery.',
     'about_engineering_title' => 'Distinctive Software Engineering',
-    'about_engineering_p1' => 'This project represents a fully engineered, robust, and highly secure Online Food Delivery System built using raw PHP 8+ and structured MySQL database modules. It is created to satisfy the high criteria of University software development modules.',
+    'about_engineering_p1' => 'This project represents a fully engineered, robust, and highly secure Online QuickBite built using raw PHP 8+ and structured MySQL database modules. It is created to satisfy the high criteria of University software development modules.',
     'about_engineering_p2' => 'Our focus revolves around creating modular, clean, and highly secure backends. We utilized native PHP sessions, prepared statements, role-based controllers, and a reusable connection layer (Singleton Pattern) without adding large, bloated frameworks.',
     'about_badge_auth' => 'Secure Authentication',
     'about_badge_pdo' => 'PDO Connection Layer',

@@ -1,6 +1,6 @@
 <?php
 /**
- * User Account Manager - Food Delivery System Admin Panel
+ * User Account Manager - QuickBite Admin Panel
  * Lists accounts, adjusts role levels, toggles active status, and manages suspensions.
  */
 

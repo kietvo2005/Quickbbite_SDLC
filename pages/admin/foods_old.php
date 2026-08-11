@@ -1,6 +1,6 @@
 <?php
 /**
- * Food Menu Item CRUD Manager - Food Delivery System Admin Panel
+ * Food Menu Item CRUD Manager - QuickBite Admin Panel
  * Adds, edits, lists, and deletes food menu options across restaurants.
  */
 

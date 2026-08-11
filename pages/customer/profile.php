@@ -1,6 +1,6 @@
 <?php
 /**
- * Customer Profile Dashboard - Food Delivery System
+ * Customer Profile Dashboard - QuickBite
  * Handles detail changes, security credentials updates, profile pictures upload, and address CRUD.
  */
 

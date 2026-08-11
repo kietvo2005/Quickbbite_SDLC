@@ -57,7 +57,7 @@ if ($path === '/') {
 
 $baseUrl = rtrim($protocol . $host . $path, '/') . '/';
 define('BASE_URL', $baseUrl);
-define('SITE_NAME', 'Food Delivery System');
+define('SITE_NAME', 'QuickBite');
 
 function asset_url($path = '') {
     $path = ltrim((string) $path, '/');

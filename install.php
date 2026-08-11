@@ -46,7 +46,7 @@ function create_gd_placeholder($path, $width, $height, $text, $bgR = 255, $bgG =
 echo "<!DOCTYPE html>
 <html>
 <head>
-    <title>Food Delivery System Installer</title>
+    <title>QuickBite Installer</title>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
     <style>
         body { background: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -126,9 +126,7 @@ try {
     $stmtAdmin = $pdo->prepare("INSERT INTO `admins` (`user_id`, `full_name`, `role`) VALUES (?, ?, ?)");
     $stmtAdmin->execute([$admin_user_id, 'Jane Doe', 'Super Administrator']);
 
-    // New Request: Create additional admin account (admin@admin.com / 123)
-    $admin_pass_new = password_hash('123', PASSWORD_DEFAULT);
-    $stmt->execute(['Admin Primary', 'admin_primary', 'admin@admin.com', $admin_pass_new, '+1 555-9003', 'Admin Office', NULL, 'admin', 'active']);
+   
     $admin_id_new = $pdo->lastInsertId();
     $stmtAdmin->execute([$admin_id_new, 'Primary Admin', 'Dashboard Admin']);
     
@@ -159,7 +157,6 @@ try {
     echo "<ul>
             <li><strong>Customer Role:</strong> Email: <code>customer@fooddelivery.com</code> / Password: <code>Customer@123</code></li>
             <li><strong>Admin Role:</strong> Email: <code>admin@fooddelivery.com</code> / Password: <code>Admin@12345</code></li>
-            <li><strong>New Primary Admin:</strong> Email: <code>admin@admin.com</code> / Password: <code>123</code></li>
           </ul>";
 
     // 6. Generate Placeholder Images

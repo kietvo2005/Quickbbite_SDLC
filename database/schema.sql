@@ -220,10 +220,7 @@ CREATE TABLE `contact_messages` (
 -- DEFAULT SEED DATA
 -- ==========================================
 
--- Default Admin Account
-INSERT INTO `users` (`name`, `username`, `email`, `password`, `phone`, `address`, `avatar`, `role`, `status`)
-VALUES ('Admin Primary', 'admin_primary', 'admin@admin.com', '$2y$10$s4AN/LGaTqe53cnTaySHmer1.bjQUKwQ5U4aHunuIKJjUVbJKTfKC', '+1 555-9003', NULL, NULL, 'admin', 'active')
-ON DUPLICATE KEY UPDATE `password` = VALUES(`password`);
+-- 
 
 -- Seed Categories
 INSERT INTO `categories` (`id`, `name`, `description`, `icon_class`, `image_path`) VALUES

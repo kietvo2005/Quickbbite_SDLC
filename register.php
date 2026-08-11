@@ -1,6 +1,6 @@
 <?php
 /**
- * Register Page - Food Delivery System
+ * Register Page - QuickBite
  * Handles customer sign ups with password hashing and session generation.
  */
 

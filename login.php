@@ -1,6 +1,6 @@
 <?php
 /**
- * Unified Login Page - Food Delivery System
+ * Unified Login Page - QuickBite
  * Authenticates customers and administrators securely.
  */
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Professional Admin Dashboard - Food Delivery System
+ * Professional Admin Dashboard - QuickBite
  * Incorporates KPI statistics cards, Chart.js integrations, Newest Customers, and Bestselling Food.
  */
 

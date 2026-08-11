@@ -1,6 +1,6 @@
 <?php
 /**
- * Restaurant Outlet CRUD Manager - Food Delivery System Admin Panel
+ * Restaurant Outlet CRUD Manager - QuickBite Admin Panel
  * Adds, edits, lists, and removes restaurant partner accounts.
  */
 

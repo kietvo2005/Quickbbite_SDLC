@@ -1,6 +1,6 @@
 <?php
 /**
- * Customer Order History - Food Delivery System
+ * Customer Order History - QuickBite
  * Lists customer orders with status indicators.
  */
 

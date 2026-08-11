@@ -1,6 +1,6 @@
 <?php
 /**
- * Checkout Page - Food Delivery System
+ * Checkout Page - QuickBite System
  * Collects delivery addresses, billing choices, and commits the transaction to the database.
  */
 

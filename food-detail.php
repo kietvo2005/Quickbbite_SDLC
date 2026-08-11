@@ -1,6 +1,6 @@
 <?php
 /**
- * Food Detail Page - Food Delivery System
+ * Food Detail Page - QuickBite -
  * Displays food item details, dynamic price multiplier widget, and add-to-cart operations.
  */
 

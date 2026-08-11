@@ -1,6 +1,6 @@
 <?php
 /**
- * Detailed Order Overview & Receipt Page - Food Delivery System
+ * Detailed Order Overview & Receipt Page - QuickBite
  * Displays full order information, status workflow, invoice actions, and admin controls.
  */
 

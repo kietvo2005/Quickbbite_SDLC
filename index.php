@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage - Food Delivery System
+ * Homepage - QuickBite
  * Displays hero search, categories, popular dishes, latest additions, and active restaurants.
  */
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Logout Page - Food Delivery System
+ * Logout Page - QuickBite
  * Destroys session variables and redirects the user based on role.
  */
 

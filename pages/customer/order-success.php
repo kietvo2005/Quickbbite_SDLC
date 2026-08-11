@@ -1,6 +1,6 @@
 <?php
 /**
- * Order Success Page - Food Delivery System
+ * Order Success Page - QuickBite
  * Shows a polished confirmation after the customer places an order.
  */
 

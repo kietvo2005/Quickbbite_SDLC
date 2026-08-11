@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Us Page - Food Delivery System
+ * Contact Us Page - QuickBite -
  * Captures user enquiries, validates them, and registers them inside database.
  */
 

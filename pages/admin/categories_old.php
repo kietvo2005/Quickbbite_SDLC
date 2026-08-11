@@ -1,6 +1,6 @@
 <?php
 /**
- * Category CRUD Manager - Food Delivery System Admin Panel
+ * Category CRUD Manager -QuickBite- Admin Panel
  * Adds, edits, lists, and deletes food categories.
  */
 

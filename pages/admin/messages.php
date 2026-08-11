@@ -1,6 +1,6 @@
 <?php
 /**
- * Support query Manager - Food Delivery System Admin Panel
+ * Support query Manager - QuickBite Admin Panel
  * Manages queries submitted through the customer contact page form.
  */
 

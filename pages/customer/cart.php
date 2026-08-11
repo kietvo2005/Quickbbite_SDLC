@@ -1,6 +1,6 @@
 <?php
 /**
- * Shopping Cart Page - Food Delivery System
+ * Shopping Cart Page - QuickBite System
  * Lists selected foods, item counts, totals, and controls for modifications.
  */
 

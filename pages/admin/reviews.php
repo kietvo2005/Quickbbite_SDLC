@@ -1,6 +1,6 @@
 <?php
 /**
- * Review Moderator - Food Delivery System Admin Panel
+ * Review Moderator - QuickBite Admin Panel
  * Lists and moderates customer feedback scores and reviews.
  */
 

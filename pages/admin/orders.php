@@ -1,6 +1,6 @@
 <?php
 /**
- * Order pipeline Manager - Food Delivery System Admin Panel
+ * Order pipeline Manager - QuickBite Admin Panel
  * Tracks customer deliveries, filters status categories, and updates fulfillment parameters.
  */
 

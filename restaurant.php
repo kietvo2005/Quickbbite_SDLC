@@ -1,6 +1,6 @@
 <?php
 /**
- * Restaurant Directory Page - Food Delivery System
+ * Restaurant Directory Page - QuickBite
  * Displays a list of all active restaurants, searchable and filterable.
  */
 

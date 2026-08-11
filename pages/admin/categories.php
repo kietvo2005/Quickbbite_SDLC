@@ -1,6 +1,6 @@
 <?php
 /**
- * Category CRUD Manager - Food Delivery System Admin Panel (AJAX-Powered)
+ * Category CRUD Manager - QuickBite Admin Panel (AJAX-Powered)
  * Adds, edits, lists, and deletes food categories.
  * No page reloads - all operations handled via AJAX with toast notifications.
  */

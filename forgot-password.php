@@ -1,6 +1,6 @@
 <?php
 /**
- * Forgot Password - Food Delivery System
+ * Forgot Password - QuickBite
  * Simulates password recovery.
  */
 
