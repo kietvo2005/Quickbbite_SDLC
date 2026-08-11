@@ -1,6 +1,6 @@
 QuickBbite SDLC – Food Delivery System
 
-1. Project Overview
+## 1. Project Overview
 
 QuickBbite SDLC is a PHP/MySQL food delivery web application developed as a demonstration project for an SDLC-based academic project.
 
@@ -14,7 +14,7 @@ The application uses a relational MySQL database named:
 
 food_delivery
 
-2. Technologies Used
+## 2. Technologies Used
 
 PHP – server-side application logic
 
@@ -34,36 +34,32 @@ Apache – local web server through XAMPP
 
 phpMyAdmin – database administration
 
-3. Project Structure
+## 3. Project Structure
 
 Important project directories and files include:
 
+```text
 Quickbbite_SDLC/
-│
 ├── admin/
 ├── assets/
 │   ├── css/
 │   ├── images/
 │   └── js/
-│
 ├── database/
 │   ├── migrations/
 │   ├── migration_admin_system.sql
 │   ├── schema.sql
 │   ├── seed_data.sql
-│   └── validation files
-│
+│   ├── validate_counts.php
+│   └── validate_seed.php
 ├── includes/
 │   ├── config/
 │   ├── database/
 │   ├── functions/
 │   └── lang/
-│
 ├── pages/
 │   └── admin/
-│
 ├── uploads/
-│
 ├── index.php
 ├── login.php
 ├── register.php
@@ -75,7 +71,7 @@ Quickbbite_SDLC/
 ├── install.php
 └── README.md
 
-4. Database
+## 4. Database
 
 The application uses the MySQL/MariaDB database:
 
@@ -123,7 +119,7 @@ database/migrations/
 database/migration_admin_system.sql
 database/seed_data.sql
 
-5. Requirements
+## 5. Requirements
 
 Before running the project, install:
 
@@ -141,7 +137,7 @@ The project can be placed inside the XAMPP web directory:
 
 C:\xampp\htdocs\Quickbbite_SDLC
 
-6. Installation
+## 6. Installation
 
 Step 1 – Copy the project
 
@@ -190,7 +186,7 @@ The installer is intended for local development/testing.
 
 Because the installer resets user-related seed data, do not repeatedly run install.php on a database containing real application data.
 
-7. Default Test Accounts
+## 7. Default Test Accounts
 
 After running the current installer, use the credentials displayed on the installation result page.
 
@@ -208,7 +204,7 @@ The administrator account is used to access the admin dashboard.
 
 Do not publish real production passwords in a public GitHub repository. The credentials above are development/demo credentials only.
 
-8. Admin Access
+## 8. Admin Access
 
 Open the application:
 
@@ -221,7 +217,7 @@ Password: Admin@12345
 
 After successful authentication, the administrator can access the admin dashboard and manage system data.
 
-9. Database Configuration
+## 9. Database Configuration
 
 Database connection settings are stored in the project's configuration files under:
 
@@ -238,7 +234,7 @@ If the local MySQL installation uses a password, update the configuration accord
 
 Do not commit production database credentials to GitHub.
 
-10. Database Reset / Reinstallation
+## 10. Database Reset / Reinstallation
 
 For a clean academic/demo installation, the recommended process is:
 
@@ -254,7 +250,7 @@ http://localhost/Quickbbite_SDLC/install.php
 
 Allow the installer to recreate the database and seed the demo data.
 
-11. Removing an Unwanted Admin Account
+## 11. Removing an Unwanted Admin Account
 
 If an extra administrator account exists in the local database, it can be removed from phpMyAdmin.
 
@@ -291,7 +287,7 @@ WHERE role = 'admin';
 
 The final database should contain only the intended administrator account.
 
-12. Main System Functions
+## 12. Main System Functions
 
 Customer Functions
 
@@ -347,7 +343,7 @@ Administrative CRUD operations
 
 Dashboard statistics and order information
 
-13. Security Features
+## 13. Security Features
 
 The application includes security-related mechanisms such as:
 
@@ -379,7 +375,7 @@ Database least-privilege accounts
 
 Regular backups
 
-14. Testing
+## 14. Testing
 
 The project includes database validation/testing files under:
 
@@ -420,7 +416,7 @@ Responsive layout
 
 Error handling
 
-15. Academic Project Scope
+## 15. Academic Project Scope
 
 This project is designed as an academic Food Delivery System implementation and demonstration.
 
@@ -428,13 +424,13 @@ The repository contains the source code, database schema, seed data and supporti
 
 The README describes the implementation currently contained in the repository. Any feature claimed in an academic report should be verified against the corresponding source code and database implementation.
 
-16. GitHub Repository
+## 16. GitHub Repository
 
 Repository:
 
 https://github.com/kietvo2005/Quickbbite_SDLC
 
-17. Notes for Developers
+## 17. Notes for Developers
 
 When modifying the project:
 
@@ -457,7 +453,7 @@ git add .
 git commit -m "Update application and database"
 git push origin main
 
-18. Project Status
+## 18. Project Status
 
 Environment: Local development / academic demonstration
 
