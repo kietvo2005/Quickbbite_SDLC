@@ -1,50 +1,164 @@
-QuickBbite SDLC – Food Delivery System
+# 🍔 QuickBbite SDLC – Food Delivery System
 
-## 1. Project Overview
+<p align="center">
+  <strong>PHP/MySQL Food Delivery Web Application</strong>
+</p>
 
-QuickBbite SDLC is a PHP/MySQL food delivery web application developed as a demonstration project for an SDLC-based academic project.
+<p align="center">
+  Academic Software Development Project
+</p>
 
-The system provides two main user roles:
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/MySQL%2FMariaDB-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Apache-XAMPP-D22128?style=for-the-badge&logo=apache&logoColor=white" alt="Apache">
+</p>
 
-Customer – browse food, manage cart, place orders and view order information.
+---
 
-Administrator – manage restaurants, categories, food items, users, orders and contact messages through the admin dashboard.
+## 📋 Table of Contents
 
-The application uses a relational MySQL database named:
+- [Project Overview](#-project-overview)
+- [Project Objectives](#-project-objectives)
+- [User Roles](#-user-roles)
+- [Technologies Used](#️-technologies-used)
+- [Project Structure](#-project-structure)
+- [Database](#️-database)
+- [Database Tables](#-database-tables)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Default Test Accounts](#-default-test-accounts)
+- [Admin Access](#-admin-access)
+- [Database Configuration](#️-database-configuration)
+- [Database Reset](#-database-reset)
+- [Main Features](#-main-features)
+- [Security Features](#-security-features)
+- [Testing](#-testing)
+- [Local Development](#️-local-development)
+- [Academic Project Scope](#-academic-project-scope)
+- [Project Status](#-project-status)
+- [Git Workflow](#-git-workflow)
+- [Important Notes](#️-important-notes)
 
+---
+
+# 📌 Project Overview
+
+**QuickBbite SDLC** is a PHP/MySQL-based **Food Delivery System** developed as an academic software development project.
+
+The application demonstrates a food delivery workflow that allows customers to browse restaurants and food items, manage their shopping cart, place orders and manage their account.
+
+The system also provides an administrator area for managing application data and monitoring system activity.
+
+The application uses a relational database named:
+
+```text
 food_delivery
+```
 
-## 2. Technologies Used
+---
 
-PHP – server-side application logic
+# 🎯 Project Objectives
 
-MySQL / MariaDB – relational database
+The main objectives of the QuickBbite SDLC project are to demonstrate the implementation of a web-based Food Delivery System using PHP and MySQL/MariaDB.
 
-HTML5 – page structure
+The project focuses on:
 
-CSS3 – styling and responsive layout
+- Requirements implementation
+- Web application development
+- Relational database design
+- User authentication
+- Role-based access control
+- CRUD operations
+- Food and restaurant management
+- Shopping cart functionality
+- Order management
+- Customer account management
+- Database integration
+- Input validation
+- Security considerations
+- Application testing
 
-JavaScript – client-side interactions and validation
+---
 
-Bootstrap 5 – responsive UI components
+# 👥 User Roles
 
-PDO – PHP database access
+The system contains two main user roles.
 
-Apache – local web server through XAMPP
+## 👤 Customer
 
-phpMyAdmin – database administration
+Customers can:
 
-## 3. Project Structure
+- Register an account
+- Log in and log out
+- Browse food categories
+- Browse restaurants
+- Browse food items
+- View food details
+- Search for food
+- Filter food items
+- Add food to the shopping cart
+- Manage cart items
+- Place orders
+- View order information
+- Manage delivery addresses
+- Submit reviews
+- Manage wishlist items
+- Contact the system
 
-Important project directories and files include:
+---
+
+## 👨‍💼 Administrator
+
+The administrator can access the administration area and manage system information.
+
+Administrator functions include:
+
+- Dashboard
+- User management
+- Restaurant management
+- Category management
+- Food management
+- Order management
+- Contact message management
+- Administrative CRUD operations
+- Order and system information
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| **PHP** | Server-side application logic |
+| **MySQL / MariaDB** | Relational database |
+| **HTML5** | Web page structure |
+| **CSS3** | Styling and layout |
+| **JavaScript** | Client-side interactions and validation |
+| **Bootstrap 5** | Responsive UI components |
+| **PDO** | PHP database access |
+| **Apache** | Local web server |
+| **XAMPP** | Local development environment |
+| **phpMyAdmin** | Database administration |
+
+---
+
+# 📂 Project Structure
+
+The main project structure is:
 
 ```text
 Quickbbite_SDLC/
+│
 ├── admin/
+│
 ├── assets/
 │   ├── css/
 │   ├── images/
 │   └── js/
+│
 ├── database/
 │   ├── migrations/
 │   ├── migration_admin_system.sql
@@ -52,14 +166,18 @@ Quickbbite_SDLC/
 │   ├── seed_data.sql
 │   ├── validate_counts.php
 │   └── validate_seed.php
+│
 ├── includes/
 │   ├── config/
 │   ├── database/
 │   ├── functions/
 │   └── lang/
+│
 ├── pages/
 │   └── admin/
+│
 ├── uploads/
+│
 ├── index.php
 ├── login.php
 ├── register.php
@@ -70,399 +188,754 @@ Quickbbite_SDLC/
 ├── contact.php
 ├── install.php
 └── README.md
+```
 
-## 4. Database
+---
 
-The application uses the MySQL/MariaDB database:
+# 🗄️ Database
 
+The application uses **MySQL/MariaDB** as its relational database management system.
+
+Database name:
+
+```text
 food_delivery
+```
 
-The database contains the main tables required by the food delivery system, including:
+The main database schema is stored in:
 
-users
-
-admins
-
-addresses
-
-auth_tokens
-
-cart
-
-categories
-
-restaurants
-
-foods
-
-orders
-
-order_items
-
-payments
-
-reviews
-
-wishlist
-
-contact_messages
-
-sepay_webhook_logs
-
-The database schema is stored in:
-
+```text
 database/schema.sql
+```
 
-Additional database setup/migration files are located in:
+Additional database files are stored in:
 
-database/migrations/
-database/migration_admin_system.sql
-database/seed_data.sql
+```text
+database/
+```
 
-## 5. Requirements
+including:
 
-Before running the project, install:
+```text
+database/
+├── migrations/
+├── migration_admin_system.sql
+├── schema.sql
+├── seed_data.sql
+├── validate_counts.php
+└── validate_seed.php
+```
 
-XAMPP
+---
 
-Apache
+# 📊 Database Tables
 
-MySQL or MariaDB
+The database contains tables supporting the main functionality of the Food Delivery System.
 
-A modern web browser
+| Table | Purpose |
+|---|---|
+| `users` | Stores customer and administrator accounts |
+| `admins` | Stores administrator profile information |
+| `addresses` | Stores customer delivery addresses |
+| `auth_tokens` | Stores authentication token information |
+| `cart` | Stores shopping cart information |
+| `categories` | Stores food categories |
+| `restaurants` | Stores restaurant information |
+| `foods` | Stores food items |
+| `orders` | Stores customer orders |
+| `order_items` | Stores individual items belonging to orders |
+| `payments` | Stores payment information |
+| `reviews` | Stores customer reviews |
+| `wishlist` | Stores customer wishlist information |
+| `contact_messages` | Stores messages submitted through the contact system |
+| `sepay_webhook_logs` | Stores payment/webhook log information |
 
-PHP must have PDO/MySQL support enabled.
+---
 
-The project can be placed inside the XAMPP web directory:
+# 💻 Requirements
 
+Before running the application, install the following:
+
+- XAMPP
+- Apache
+- MySQL or MariaDB
+- PHP with PDO/MySQL support
+- A modern web browser
+
+The project is designed to run in a local XAMPP environment.
+
+Recommended project location:
+
+```text
 C:\xampp\htdocs\Quickbbite_SDLC
+```
 
-## 6. Installation
+---
 
-Step 1 – Copy the project
+# 🚀 Installation
 
-Copy the project folder into:
+## Step 1 – Copy the Project
 
+Copy the project folder into the XAMPP web directory:
+
+```text
 C:\xampp\htdocs\
+```
 
-The final path should be:
+The final project path should be:
 
+```text
 C:\xampp\htdocs\Quickbbite_SDLC
+```
 
-Step 2 – Start XAMPP
+---
 
-Open XAMPP Control Panel and start:
+## Step 2 – Start XAMPP
 
+Open the **XAMPP Control Panel**.
+
+Start the following services:
+
+```text
 Apache
 MySQL
+```
 
-Step 3 – Run the installer
+Make sure both services are running before continuing.
 
-Open:
+---
 
+## Step 3 – Run the Installer
+
+Open the following URL in your browser:
+
+```text
 http://localhost/Quickbbite_SDLC/install.php
+```
+
+The installer automatically performs the initial database setup.
 
 The installer will:
 
-Connect to MySQL.
+1. Connect to the MySQL server.
+2. Create the `food_delivery` database if it does not exist.
+3. Select the `food_delivery` database.
+4. Execute `database/schema.sql`.
+5. Create the required database tables.
+6. Seed categories.
+7. Seed restaurants.
+8. Seed food items.
+9. Create development user accounts.
+10. Seed sample historical order data.
+11. Generate local placeholder image assets.
 
-Create the food_delivery database if it does not already exist.
+If the installation is successful, the installer displays:
 
-Execute database/schema.sql.
-
-Seed categories, restaurants and food data.
-
-Create the default customer/admin accounts configured by the installer.
-
-Generate local placeholder image assets.
-
-When the installation is successful, the page displays:
-
+```text
 Installation Completed Successfully!
+```
 
-Important
+---
 
-The installer is intended for local development/testing.
+# 🔐 Default Test Accounts
 
-Because the installer resets user-related seed data, do not repeatedly run install.php on a database containing real application data.
+After running the current installer, the development accounts are displayed on the installation result page.
 
-## 7. Default Test Accounts
+## 👤 Customer Account
 
-After running the current installer, use the credentials displayed on the installation result page.
-
-Customer
-
+```text
 Email: customer@fooddelivery.com
 Password: Customer@123
+```
 
-Administrator
+## 👨‍💼 Administrator Account
 
+```text
 Email: admin@fooddelivery.com
 Password: Admin@12345
+```
 
-The administrator account is used to access the admin dashboard.
+These credentials are intended for **local academic/demo testing only**.
 
-Do not publish real production passwords in a public GitHub repository. The credentials above are development/demo credentials only.
+Do not use these credentials for a production deployment.
 
-## 8. Admin Access
+---
 
-Open the application:
+# 🔑 Admin Access
 
+After completing the installation, open:
+
+```text
 http://localhost/Quickbbite_SDLC/
+```
 
-Log in using the administrator account:
+Use the administrator credentials:
 
+```text
 Email: admin@fooddelivery.com
 Password: Admin@12345
+```
 
-After successful authentication, the administrator can access the admin dashboard and manage system data.
+After successful authentication, the administrator can access the administration dashboard.
 
-## 9. Database Configuration
+The administrator dashboard provides access to the available management functions implemented in the project.
 
-Database connection settings are stored in the project's configuration files under:
+---
 
+# 🗃️ Database Configuration
+
+The application's database configuration is stored under:
+
+```text
 includes/config/
+```
 
-For a default XAMPP installation, the local MySQL configuration is normally:
+The default XAMPP database configuration is:
 
+```text
 Host: localhost
 Username: root
-Password: 
+Password:
 Database: food_delivery
+```
 
-If the local MySQL installation uses a password, update the configuration accordingly.
+For a default XAMPP installation, the MySQL `root` account may not have a password.
 
-Do not commit production database credentials to GitHub.
+If your local MySQL/MariaDB installation uses a password, update the project's database configuration accordingly.
 
-## 10. Database Reset / Reinstallation
+### ⚠️ Security
 
-For a clean academic/demo installation, the recommended process is:
+Do not commit the following information to a public repository:
 
-Back up any required data.
+- Production database passwords
+- API keys
+- Payment credentials
+- Private authentication secrets
+- Production server credentials
 
-Remove the existing food_delivery database in phpMyAdmin.
+---
 
-Create/start MySQL through XAMPP.
+# 🔄 Database Reset
+
+For a clean academic/demo installation, the database can be recreated.
+
+## Step 1 – Backup Required Data
+
+Before resetting the database, back up any data that needs to be preserved.
+
+## Step 2 – Open phpMyAdmin
 
 Open:
 
-http://localhost/Quickbbite_SDLC/install.php
+```text
+http://localhost/phpmyadmin/
+```
 
-Allow the installer to recreate the database and seed the demo data.
-
-## 11. Removing an Unwanted Admin Account
-
-If an extra administrator account exists in the local database, it can be removed from phpMyAdmin.
-
-Open:
-
-http://localhost/phpmyadmin
+## Step 3 – Select the Database
 
 Select:
 
+```text
 food_delivery
+```
 
-Then open the users table.
+## Step 4 – Remove the Existing Database
 
-To identify administrator accounts, run:
+Delete the existing `food_delivery` database if a clean installation is required.
 
+## Step 5 – Start XAMPP
+
+Make sure:
+
+```text
+Apache
+MySQL
+```
+
+are running.
+
+## Step 6 – Run the Installer
+
+Open:
+
+```text
+http://localhost/Quickbbite_SDLC/install.php
+```
+
+The installer will recreate the database and seed the development data.
+
+---
+
+# 🧹 Removing an Unwanted Administrator
+
+If an additional administrator account exists in the local database, it can be removed through phpMyAdmin.
+
+Open:
+
+```text
+http://localhost/phpmyadmin/
+```
+
+Select:
+
+```text
+food_delivery
+```
+
+Open the SQL interface and check all administrator accounts:
+
+```sql
 SELECT id, name, username, email, role
 FROM users
 WHERE role = 'admin';
+```
 
-Before deleting an account, verify that it is the unwanted account.
+The intended administrator account is:
+
+```text
+admin@fooddelivery.com
+```
+
+If an unwanted administrator account exists, verify the account before deleting it.
 
 For example:
 
+```sql
 DELETE FROM users
 WHERE email = 'admin@admin.com';
+```
 
-If the corresponding record exists in the admins table, remove that profile first or use the appropriate foreign-key-safe deletion method for the current schema.
+Then verify the remaining administrator accounts:
 
-Verify the result:
-
+```sql
 SELECT id, name, username, email, role
 FROM users
 WHERE role = 'admin';
+```
 
-The final database should contain only the intended administrator account.
+The expected result should contain the intended administrator account:
 
-## 12. Main System Functions
+```text
+admin@fooddelivery.com
+```
 
-Customer Functions
+> ⚠️ Always verify the email address before executing a `DELETE` statement.
 
-User registration
+---
 
-User login/logout
+# ✨ Main Features
 
-Browse food categories
+## 🛍️ Customer Features
 
-Browse restaurants
+| Feature | Description |
+|---|---|
+| Registration | Create a customer account |
+| Login | Authenticate an existing user |
+| Logout | End the current session |
+| Food Categories | Browse food by category |
+| Restaurants | Browse restaurant information |
+| Food Details | View detailed food information |
+| Search | Search for food items |
+| Filtering | Filter available food |
+| Shopping Cart | Add and manage food items |
+| Orders | Place and view orders |
+| Addresses | Manage delivery addresses |
+| Reviews | Submit customer reviews |
+| Wishlist | Save favourite food items |
+| Contact | Submit contact messages |
 
-Browse food items
+---
 
-View food details
+## 👨‍💼 Administrator Features
 
-Search/filter food
+| Feature | Description |
+|---|---|
+| Administrator Login | Secure administrator authentication |
+| Dashboard | View administrative information |
+| User Management | Manage registered users |
+| Restaurant Management | Manage restaurants |
+| Category Management | Manage food categories |
+| Food Management | Manage food items |
+| Order Management | Manage customer orders |
+| Contact Management | Manage contact messages |
+| CRUD Operations | Create, read, update and delete records |
+| Statistics | Display available order/system information |
 
-Add items to cart
+---
 
-Manage cart
+# 🔒 Security Features
 
-Place orders
+The application includes several security-related mechanisms.
 
-View order information
+## Password Hashing
 
-Manage profile/address information
+User passwords are stored using PHP password hashing functions rather than plain-text passwords.
 
-Submit reviews
+## PDO Prepared Statements
 
-Manage wishlist
+PDO prepared statements are used for database operations to reduce the risk of SQL injection.
 
-Contact the system
+## Authentication
 
-Administrator Functions
+Session-based authentication is used for user login and protected functionality.
 
-Administrator authentication
+## Role-Based Access Control
 
-Dashboard
+Administrator functionality is restricted according to the user's role.
 
-User management
+## Input Validation
 
-Restaurant management
+User input is validated before being processed by the application.
 
-Category management
+---
 
-Food management
+# 🧪 Testing
 
-Order management
+The project contains database validation scripts under:
 
-Contact message management
-
-Administrative CRUD operations
-
-Dashboard statistics and order information
-
-## 13. Security Features
-
-The application includes security-related mechanisms such as:
-
-Password hashing using PHP password hashing functions
-
-PDO prepared statements for database operations
-
-Role-based access control
-
-Session-based authentication
-
-Input validation
-
-Authentication checks for protected pages
-
-For production deployment, additional security hardening should be applied, including:
-
-HTTPS/SSL
-
-Secure environment-based credentials
-
-CSRF protection
-
-Secure cookie configuration
-
-Production error handling
-
-Database least-privilege accounts
-
-Regular backups
-
-## 14. Testing
-
-The project includes database validation/testing files under:
-
+```text
 database/
+```
 
-Examples include:
+Available validation files include:
 
-validate_counts.php
-validate_seed.php
+```text
+database/validate_counts.php
+database/validate_seed.php
+```
 
-The application can also be tested locally using:
+Recommended application testing areas include:
 
+- User registration
+- User login
+- User logout
+- Customer navigation
+- Restaurant browsing
+- Food browsing
+- Food details
+- Search functionality
+- Filtering
+- Shopping cart
+- Order placement
+- Customer account functions
+- Administrator login
+- Administrator dashboard
+- User CRUD operations
+- Restaurant CRUD operations
+- Category CRUD operations
+- Food CRUD operations
+- Order management
+- Contact messages
+- Database relationships
+- Form validation
+- Error handling
+- Responsive interface
+
+---
+
+# 🖥️ Local Development
+
+The application is designed to run using the following local development stack:
+
+```text
+XAMPP
+│
+├── Apache
+│   └── PHP
+│
+└── MySQL / MariaDB
+    └── food_delivery
+```
+
+Application URL:
+
+```text
 http://localhost/Quickbbite_SDLC/
+```
 
-Recommended testing areas include:
+Installer:
 
-Registration
+```text
+http://localhost/Quickbbite_SDLC/install.php
+```
 
-Login/logout
+phpMyAdmin:
 
-Customer navigation
+```text
+http://localhost/phpmyadmin/
+```
 
-Food browsing
+---
 
-Cart operations
+# 🖼️ Screenshots
 
-Order placement
+Screenshots can be added to the repository to demonstrate the implemented system.
 
-Admin login
+Recommended screenshots include:
 
-Admin CRUD functions
+```text
+docs/
+└── screenshots/
+    ├── homepage.png
+    ├── restaurant.png
+    ├── food-detail.png
+    ├── cart.png
+    ├── login.png
+    ├── register.png
+    └── admin-dashboard.png
+```
 
-Database relationships
+For example:
 
-Form validation
+```markdown
+![Homepage](docs/screenshots/homepage.png)
+```
 
-Responsive layout
+You can also add screenshots of:
 
-Error handling
+- Customer homepage
+- Restaurant page
+- Food details
+- Shopping cart
+- Login page
+- Registration page
+- Order page
+- Administrator dashboard
+- Database structure
+- phpMyAdmin database tables
 
-## 15. Academic Project Scope
+---
 
-This project is designed as an academic Food Delivery System implementation and demonstration.
+# 🎓 Academic Project Scope
 
-The repository contains the source code, database schema, seed data and supporting configuration required to demonstrate the implemented system.
+QuickBbite SDLC is an academic **Food Delivery System** project.
 
-The README describes the implementation currently contained in the repository. Any feature claimed in an academic report should be verified against the corresponding source code and database implementation.
+The project demonstrates the implementation of a PHP/MySQL web application using a relational database architecture.
 
-## 16. GitHub Repository
+The repository contains:
 
-Repository:
+- Application source code
+- PHP pages
+- CSS files
+- JavaScript files
+- Image assets
+- Database schema
+- Database seed data
+- Database migration files
+- Validation scripts
+- Installation script
+- Project documentation
 
-https://github.com/kietvo2005/Quickbbite_SDLC
+The README describes the implementation contained within the project repository.
 
-## 17. Notes for Developers
+Any feature claimed in an academic report should be verified against the corresponding source code and database implementation.
 
-When modifying the project:
+---
 
-Keep database changes synchronized with database/schema.sql or the relevant migration.
+# 📈 Project Status
 
-Test changes locally using XAMPP.
+| Component | Status |
+|---|---|
+| PHP Application | ✅ Implemented |
+| MySQL/MariaDB Database | ✅ Implemented |
+| Customer Authentication | ✅ Implemented |
+| Administrator Authentication | ✅ Implemented |
+| Food Categories | ✅ Implemented |
+| Restaurant Management | ✅ Implemented |
+| Food Management | ✅ Implemented |
+| Shopping Cart | ✅ Implemented |
+| Order Management | ✅ Implemented |
+| Reviews | ✅ Implemented |
+| Wishlist | ✅ Implemented |
+| Contact Messages | ✅ Implemented |
+| Database Seeder | ✅ Implemented |
+| Installation Script | ✅ Implemented |
+| Local XAMPP Environment | ✅ Supported |
 
-Verify both customer and administrator workflows.
+---
 
-Check database records in phpMyAdmin after CRUD operations.
+# 🔧 Git Workflow
 
-Do not commit passwords, API keys or production credentials.
+After modifying the project, check the current Git status:
 
-Commit and push tested changes to GitHub.
-
-Example Git workflow:
-
+```bash
 git status
+```
+
+Add the changes:
+
+```bash
 git add .
-git commit -m "Update application and database"
+```
+
+Create a commit:
+
+```bash
+git commit -m "Update Food Delivery System"
+```
+
+Push the changes to GitHub:
+
+```bash
 git push origin main
+```
 
-## 18. Project Status
+To check the remote repository:
 
-Environment: Local development / academic demonstration
+```bash
+git remote -v
+```
 
-Database: MySQL / MariaDB
+The project repository is:
 
-Database name: food_delivery
+```text
+https://github.com/kietvo2005/Quickbbite_SDLC
+```
 
-Web server: Apache via XAMPP
+---
 
-Primary administrator: admin@fooddelivery.com
+# 📦 Recommended Git Workflow
 
-Customer test account: customer@fooddelivery.com
+Before pushing changes to GitHub:
+
+### 1. Check the project
+
+```bash
+git status
+```
+
+### 2. Review modified files
+
+```bash
+git diff
+```
+
+### 3. Add files
+
+```bash
+git add .
+```
+
+### 4. Commit
+
+```bash
+git commit -m "Update project"
+```
+
+### 5. Push
+
+```bash
+git push origin main
+```
+
+### 6. Verify GitHub
+
+Open the repository and refresh the page:
+
+```text
+https://github.com/kietvo2005/Quickbbite_SDLC
+```
+
+---
+
+# ⚠️ Important Notes
+
+## Development Environment
+
+This project is designed primarily for:
+
+```text
+Local Development
+Academic Demonstration
+Software Testing
+```
+
+It is not presented as a production-ready commercial deployment.
+
+---
+
+## Installer Security
+
+The file:
+
+```text
+install.php
+```
+
+is intended for local installation and testing.
+
+Do not leave the installer publicly accessible on a production server.
+
+---
+
+## Database Safety
+
+The installation process may create or reset development/seed data.
+
+Do not run the installer against a database containing important production data.
+
+Always create a database backup before performing a reset or migration.
+
+---
+
+## Production Deployment
+
+Before deploying the application to a production server, additional security and configuration measures should be applied, including:
+
+- HTTPS/SSL
+- Secure session cookies
+- CSRF protection
+- Secure environment variables
+- Production database credentials
+- Database least-privilege accounts
+- Production error handling
+- Regular backups
+- Secure payment configuration
+- Removal or protection of development tools
+- Removal or restriction of the installer
+
+---
+
+# 📚 Project Documentation
+
+The repository contains the main source code and database resources required to demonstrate the Food Delivery System.
+
+Important files include:
+
+```text
+README.md
+install.php
+database/schema.sql
+database/seed_data.sql
+database/migration_admin_system.sql
+database/validate_counts.php
+database/validate_seed.php
+```
+
+---
+
+# 👨‍💻 Developer
+
+**QuickBbite SDLC**
+
+Food Delivery System
+
+Academic Software Development Project
+
+---
+
+<p align="center">
+
+### 🍔 QuickBbite SDLC
+
+**Food Delivery System**
+
+Built with PHP • MySQL/MariaDB • Bootstrap 5 • JavaScript
+
+</p>
+
+---
+
+<p align="center">
+  <sub>Academic project documentation</sub>
+</p>
